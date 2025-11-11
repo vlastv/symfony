@@ -31,8 +31,9 @@ abstract class AbstractRequestParser implements RequestParserInterface
 
     /**
      * @param Request|null $request The original request that was received by the webhook controller
+     * @param array<Envelope> The envelopes after dispatch events
      */
-    public function createSuccessfulResponse(/* ?Request $request = null */): Response
+    public function createSuccessfulResponse(/* ?Request $request = null, array $evnvelopes = [] */): Response
     {
         return new Response('', 202);
     }

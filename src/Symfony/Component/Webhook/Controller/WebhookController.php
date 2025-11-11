@@ -48,10 +48,11 @@ final class WebhookController
 
         $events = \is_array($events) ? $events : [$events];
 
+        $envelopes = [];
         foreach ($events as $event) {
-            $this->bus->dispatch(new ConsumeRemoteEventMessage($type, $event));
+            $envelopes[] = $this->bus->dispatch(new ConsumeRemoteEventMessage($type, $event));
         }
 
-        return $parser->createSuccessfulResponse($request);
+        return $parser->createSuccessfulResponse($request, $envelopes);
     }
 }
