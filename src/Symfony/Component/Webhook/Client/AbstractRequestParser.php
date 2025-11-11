@@ -14,6 +14,7 @@ namespace Symfony\Component\Webhook\Client;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestMatcherInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\RemoteEvent\RemoteEvent;
 use Symfony\Component\Webhook\Exception\RejectWebhookException;
 
